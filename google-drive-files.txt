@@ -1,0 +1,19 @@
+# 📱 GOOGLE DRIVE METHOD - Android Phone
+
+## 🎯 What I'm doing for you:
+I'm putting all your website files in text format so you can easily copy them from Google Drive!
+
+## 📁 Files you'll create:
+1. index.html (main website)
+2. styles.css (makes it look pretty)
+3. script.js (makes it interactive)
+4. netlify.toml (deployment settings)
+5. _headers (performance boost)
+
+## 📱 Android Steps:
+1. I'll give you the text for each file
+2. You copy-paste into Google Drive
+3. Download from Google Drive
+4. Upload to Netlify
+
+Ready? Let's go! 🚀

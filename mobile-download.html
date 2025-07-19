@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Download Digorythm Website - Android Friendly</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 15px; 
+            background: #000; 
+            color: #fff; 
+            line-height: 1.6;
+        }
+        .header { 
+            background: #39FF14; 
+            color: #000; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+            text-align: center;
+        }
+        .step { 
+            background: #333; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 8px; 
+            border-left: 4px solid #4169E1;
+        }
+        .file-content { 
+            background: #111; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin: 10px 0; 
+            font-family: monospace; 
+            font-size: 12px; 
+            max-height: 200px; 
+            overflow-y: scroll;
+        }
+        .download-btn { 
+            background: #4169E1; 
+            color: white; 
+            padding: 15px 25px; 
+            border: none; 
+            border-radius: 5px; 
+            width: 100%; 
+            font-size: 16px; 
+            margin: 10px 0; 
+            cursor: pointer;
+        }
+        .download-btn:hover { 
+            background: #39FF14; 
+            color: #000; 
+        }
+        .important { 
+            background: #4169E1; 
+            color: white; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📱 Digorythm Website - Android Download</h1>
+        <p>Get your luxury tech-wear website live in 3 taps!</p>
+    </div>
+
+    <div class="important">
+        <h2>🎯 What You'll Do:</h2>
+        <ol>
+            <li><strong>Download each file</strong> by tapping the download buttons below</li>
+            <li><strong>Create a folder</strong> on your phone called "digorythm-website"</li>
+            <li><strong>Put all files</strong> in that folder</li>
+            <li><strong>Upload the folder</strong> to Netlify</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>📄 File 1: index.html</h3>
+        <p>This is your main website file (the most important one!)</p>
+        <button class="download-btn" onclick="downloadFile('index.html', indexContent)">
+            📥 Download index.html
+        </button>
+    </div>
+
+    <div class="step">
+        <h3>🎨 File 2: styles.css</h3>
+        <p>This makes your website look beautiful</p>
+        <button class="download-btn" onclick="downloadFile('styles.css', stylesContent)">
+            📥 Download styles.css
+        </button>
+    </div>
+
+    <div class="step">
+        <h3>⚡ File 3: script.js</h3>
+        <p>This makes the 3D models and animations work</p>
+        <button class="download-btn" onclick="downloadFile('script.js', scriptContent)">
+            📥 Download script.js
+        </button>
+    </div>
+
+    <div class="step">
+        <h3>⚙️ File 4: netlify.toml</h3>
+        <p>This tells Netlify how to deploy your website</p>
+        <button class="download-btn" onclick="downloadFile('netlify.toml', netlifyContent)">
+            📥 Download netlify.toml
+        </button>
+    </div>
+
+    <div class="step">
+        <h3>🛡️ File 5: _headers</h3>
+        <p>This makes your website fast and secure</p>
+        <button class="download-btn" onclick="downloadFile('_headers', headersContent)">
+            📥 Download _headers
+        </button>
+    </div>
+
+    <div class="important">
+        <h2>🚀 After downloading all 5 files:</h2>
+        <ol>
+            <li><strong>Go to:</strong> netlify.com on your phone</li>
+            <li><strong>Sign up</strong> with your Google account</li>
+            <li><strong>Tap "Deploy manually"</strong></li>
+            <li><strong>Select your folder</strong> with all 5 files</li>
+            <li><strong>Wait 30 seconds</strong> - Your website is LIVE! 🎉</li>
+        </ol>
+    </div>
+
+    <script>
+        // File contents will be loaded here
+        const indexContent = `Loading...`;
+        const stylesContent = `Loading...`;
+        const scriptContent = `Loading...`;
+        const netlifyContent = \`[build]
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200\`;
+
+        const headersContent = \`/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+
+/*.js
+  Cache-Control: public, max-age=31536000
+
+/*.css  
+  Cache-Control: public, max-age=31536000\`;
+
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            const file = new Blob([content], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = filename;
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            alert('✅ ' + filename + ' downloaded! Check your Downloads folder.');
+        }
+    </script>
+</body>
+</html>
