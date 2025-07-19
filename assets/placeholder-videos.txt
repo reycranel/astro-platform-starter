@@ -1,0 +1,20 @@
+# Video Assets for Digorythm Website
+
+The following video files are referenced in the HTML but not included in this demo:
+
+## Required Video Files:
+1. `jacket-demo.mp4` - Demo video showing the Quantum Jacket in motion
+2. `pants-demo.mp4` - Demo video showing the Neural Pants features
+3. `shoes-demo.mp4` - Demo video showing the Cyber Runners in action
+4. `accessories-demo.mp4` - Demo video showing tech accessories
+
+## Note:
+These videos would typically be short (3-5 second) loops showing the products in motion, demonstrating features like LED strips activating, fabric flexibility, or interactive elements.
+
+For demonstration purposes, the website will work without these videos - the product cards will still be interactive with hover effects and click functionality.
+
+To add your own videos:
+1. Place MP4 files in this `/assets/` directory
+2. Ensure they match the filenames referenced in the HTML
+3. Keep file sizes small for web optimization (under 5MB each)
+4. Use modern video codecs (H.264 or H.265) for broad compatibility

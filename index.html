@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digorythm - The Everything Store for the World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">DIGORYTHM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#collections" class="nav-link">COLLECTIONS</a></li>
+                <li><a href="#lab" class="nav-link">3D TECHWEAR LAB</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles-container"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">DIGORYTHM</span>
+                    <span class="title-line">REDEFINES</span>
+                    <span class="title-line">THE FUTURE</span>
+                </h1>
+                <p class="hero-subtitle">Designed to adapt, perform, and connect</p>
+                <button class="cta-button">EXPLORE COLLECTION</button>
+            </div>
+            <div class="hero-3d">
+                <div id="hero-canvas"></div>
+                <div class="model-controls">
+                    <button class="control-btn" data-action="rotate">360° VIEW</button>
+                    <button class="control-btn" data-action="zoom">ZOOM IN</button>
+                    <button class="control-btn" data-action="features">TOGGLE LEDS</button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <h2 class="section-title">TECH-WEAR COLLECTIONS</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="jacket">
+                    <div class="product-image">
+                        <video class="product-video" muted loop>
+                            <source src="assets/jacket-demo.mp4" type="video/mp4">
+                        </video>
+                        <div class="product-overlay">
+                            <h3>QUANTUM JACKET</h3>
+                            <p>Adaptive LED Integration</p>
+                            <span class="price">$899</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-product="pants">
+                    <div class="product-image">
+                        <video class="product-video" muted loop>
+                            <source src="assets/pants-demo.mp4" type="video/mp4">
+                        </video>
+                        <div class="product-overlay">
+                            <h3>NEURAL PANTS</h3>
+                            <p>Smart Fabric Technology</p>
+                            <span class="price">$699</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-product="shoes">
+                    <div class="product-image">
+                        <video class="product-video" muted loop>
+                            <source src="assets/shoes-demo.mp4" type="video/mp4">
+                        </video>
+                        <div class="product-overlay">
+                            <h3>CYBER RUNNERS</h3>
+                            <p>Performance Tracking Soles</p>
+                            <span class="price">$549</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-product="accessories">
+                    <div class="product-image">
+                        <video class="product-video" muted loop>
+                            <source src="assets/accessories-demo.mp4" type="video/mp4">
+                        </video>
+                        <div class="product-overlay">
+                            <h3>TECH ACCESSORIES</h3>
+                            <p>Modular Enhancement Kit</p>
+                            <span class="price">$299</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customizer Section -->
+    <section id="customizer" class="customizer">
+        <div class="container">
+            <h2 class="section-title">DESIGN YOUR FUTURE</h2>
+            <div class="customizer-content">
+                <div class="customizer-3d">
+                    <div id="customizer-canvas"></div>
+                </div>
+                <div class="customizer-controls">
+                    <div class="control-group">
+                        <h3>BASE COLOR</h3>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="black" style="background: #000"></button>
+                            <button class="color-btn" data-color="royal" style="background: #4169E1"></button>
+                            <button class="color-btn" data-color="toxic" style="background: #39FF14"></button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h3>TRIM ACCENTS</h3>
+                        <div class="accent-options">
+                            <button class="accent-btn active" data-accent="none">NONE</button>
+                            <button class="accent-btn" data-accent="royal">ROYAL BLUE</button>
+                            <button class="accent-btn" data-accent="toxic">TOXIC GREEN</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h3>MATERIAL</h3>
+                        <div class="material-options">
+                            <button class="material-btn active" data-material="standard">STANDARD</button>
+                            <button class="material-btn" data-material="kevlar">KEVLAR WEAVE</button>
+                            <button class="material-btn" data-material="reflective">REFLECTIVE</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h3>EMBEDDED TECH</h3>
+                        <div class="tech-options">
+                            <label class="tech-option">
+                                <input type="checkbox" data-tech="led">
+                                <span>LED STRIPS</span>
+                            </label>
+                            <label class="tech-option">
+                                <input type="checkbox" data-tech="tracking">
+                                <span>DATA TRACKING</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="customize-cta">ADD TO CART - $899</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Section -->
+    <section id="lab" class="lab">
+        <div class="lab-parallax">
+            <div class="container">
+                <h2 class="section-title">3D TECHWEAR LAB</h2>
+                <div class="lab-content">
+                    <div class="lab-text">
+                        <h3>INNOVATION THROUGH DESIGN</h3>
+                        <p>Our lab combines cutting-edge materials science with futuristic aesthetics. Every piece undergoes rigorous testing in our virtual environment before physical production.</p>
+                        <div class="lab-stats">
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">PROTOTYPES</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">TECH FEATURES</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3D</span>
+                                <span class="stat-label">MODELING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lab-wireframe">
+                        <div id="wireframe-canvas"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">THE FUTURE IS NOW</h2>
+                <p class="about-text">Digorythm stands at the intersection of fashion and technology, creating garments that don't just look extraordinary—they perform extraordinarily. Our tech-wear collection represents the evolution of human expression through intelligent design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DIGORYTHM</h3>
+                    <p>The Everything Store for the World</p>
+                </div>
+                <div class="footer-section">
+                    <h4>CONNECT</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">INSTAGRAM</a>
+                        <a href="#" class="social-link">TWITTER</a>
+                        <a href="#" class="social-link">YOUTUBE</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>NEWSLETTER</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="YOUR EMAIL" class="newsletter-input">
+                        <button class="newsletter-btn">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Site built with WebGL, Three.js, and React — powered by Digorythm Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
